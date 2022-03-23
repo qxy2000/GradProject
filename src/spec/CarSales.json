@@ -1,0 +1,191 @@
+{
+    "data": {
+        "url": "./CarSales.csv",
+        "schema": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "pictype": "time"
+          },
+          {
+            "field": "Brand",
+            "type": "categorical"
+          },
+          {
+            "field": "Category",
+            "type": "categorical"
+          },
+          {
+            "field": "Sales",
+            "type": "numerical"
+          }
+        ]
+      },
+      "facts":[
+          {
+              "type": "rank",
+              "measure": [
+                  {
+                      "field": "Sales",
+                      "subtype": "integer+",
+                      "aggregate": "avg"
+                  }
+              ],
+              "subspace": [],
+              "groupby": [
+                  "Brand"
+              ],
+              "focus": [],
+              "score": 2.59,
+              "parameter": [
+                  "Honda",
+                  "Toyota",
+                  "Ford",
+                  "Hyundai",
+                  "GMC",
+                  "Mazda",
+                  "BMW",
+                  "Volkswagen"
+              ],
+              "possibility": 0.125,
+              "information": 3.0,
+              "significance": 0.86
+          },
+          {
+            "type": "distribution",
+            "measure": [
+                {
+                    "field": "Sales",
+                    "subtype": "integer+",
+                    "aggregate": "avg"
+                }
+            ],
+            "subspace": [],
+            "groupby": [
+                "Brand"
+            ],
+            "focus": [],
+            "score": 1.53,
+            "parameter": "",
+            "possibility": 0.125,
+            "information": 3.0,
+            "significance": 0.51
+        },
+        {
+            "type": "extreme",
+            "measure": [
+                {
+                    "field": "Sales",
+                    "subtype": "integer+",
+                    "aggregate": "sum"
+                }
+            ],
+            "subspace": [],
+            "groupby": [
+                "Brand"
+            ],
+            "focus": [
+                {
+                    "field": "Brand",
+                    "value": "Ford"
+                }
+            ],
+            "score": 1.23,
+            "parameter": [
+                "max",
+                "5489641"
+            ],
+            "possibility": 0.025,
+            "information": 5.3,
+            "significance": 0.23
+        },
+        {
+            "type": "difference",
+            "measure": [
+                {
+                    "field": "Sales",
+                    "subtype": "integer+",
+                    "aggregate": "avg"
+                }
+            ],
+            "subspace": [
+                {
+                    "field": "Brand",
+                    "value": "Honda"
+                }
+            ],
+            "groupby": [
+                "Category"
+            ],
+            "focus": [
+                {
+                    "field": "Category",
+                    "value": "Midsize"
+                },
+                {
+                    "field": "Category",
+                    "value": "SUV"
+                }
+            ],
+            "score": 7.19,
+            "parameter": 200926.4,
+            "possibility": 0.006,
+            "information": 7.2,
+            "significance": 1.0
+        },
+        {
+            "type": "distribution",
+            "measure": [
+                {
+                    "field": "Sales",
+                    "subtype": "integer+",
+                    "aggregate": "sum"
+                }
+            ],
+            "subspace": [
+                {
+                    "field": "Brand",
+                    "value": "BMW"
+                }
+            ],
+            "groupby": [
+                "Category"
+            ],
+            "focus": [],
+            "score": 5.33,
+            "parameter": "",
+            "possibility": 0.020,
+            "information": 5.6,
+            "significance": 0.95
+        },
+        {
+            "type": "difference",
+            "measure": [
+                {
+                    "field": "Sales",
+                    "subtype": "integer+",
+                    "aggregate": "avg"
+                }
+            ],
+            "subspace": [],
+            "groupby": [
+                "Category"
+            ],
+            "focus": [
+                {
+                    "field": "Category",
+                    "value": "Midsize"
+                },
+                {
+                    "field": "Category",
+                    "value": "MPV"
+                }
+            ],
+            "score": 5.64,
+            "parameter": 131336.17,
+            "possibility": 0.02,
+            "information": 5.6,
+            "significance": 1.0
+        }
+      ]
+}
