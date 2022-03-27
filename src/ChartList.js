@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { AutoVideo } from './vis';
 import { fact2vis } from "./vis/recommendation/fact2vis";
+import { Animation } from "./vis"
+import * as d3 from 'd3';
 
 export default class ChartList extends Component {
 
@@ -16,6 +18,8 @@ export default class ChartList extends Component {
         // this.specVis = this.autovideo.generate();
         // console.log("ChartList specVis")
         // console.log(this.specVis)
+        // this.animation = new Animation();
+        // this.animation.addchart()
     }
 
     render() {
@@ -35,6 +39,11 @@ export default class ChartList extends Component {
         console.log("calliope-chart singleFinalSpecVis")
         console.log(this.specVis[0])
         const { id } = this.props.chart ? this.props.chart : { id: "demo-chartlist" };
+
+        // this.animation = new Animation();
+        // this.animation.addchart()
+        // this.animation.chart2animation()
+
         return (
             // <div id = {id ? `#vischart_${id}` : 'demo-chart'} style={{height: height, width: width, position: "relative"}} />
             <div id = 'demo-chartlist' style={{height: height, width: width, position: "relative"}} >

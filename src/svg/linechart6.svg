@@ -1,0 +1,86 @@
+<svg height="281" width="383" viewBox="0 0 383 280.85" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs/>
+    <g transform="translate(1.00,1.00)" id="chart1">
+        <g id="group2"/>
+        <g id="group3">
+            <g transform="translate(13.61,245.85)" id="shape4">
+                <path d="M.0,5.0L350.4,5.0" stroke-width="1" stroke="#000000" fill="none"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-2.6" y="27.0">0</tspan>
+                </text>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="81.4" y="27.0">20</tspan>
+                </text>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="169.0" y="27.0">40</tspan>
+                </text>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="256.6" y="27.0">60</tspan>
+                </text>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="344.2" y="27.0">80</tspan>
+                </text>
+            </g>
+            <g transform="translate(8.61,11.50)" id="shape6">
+                <path d="M5.0,239.4L5.0,.0M5.0,239.4L.0,239.4M5.0,191.5L.0,191.5M5.0,143.6L.0,143.6M5.0,95.7L.0,95.7M5.0,47.9L.0,47.9M5.0,.0L.0,.0" stroke-width="1" stroke="#000000" fill="none"/>
+            </g>
+        </g>
+        <g transform="translate(13.61,11.50)" id="group8">
+            <g transform="translate(0.00,197.46)" id="group9">
+                <g id="shape10">
+                    <path d="M.0,.0L.0,35.9L87.6,35.9L87.6,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#ffcc53" stroke="#ffcc53"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#ffcc53" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="37.6" y="23.5">20</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="37.6" y="23.5">20</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(0.00,149.59)" id="group11">
+                <g id="shape12">
+                    <path d="M.0,.0L.0,35.9L262.8,35.9L262.8,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#ffcc53" stroke="#ffcc53"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#ffcc53" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="125.2" y="23.5">60</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="125.2" y="23.5">60</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(0.00,101.72)" id="group13">
+                <g id="shape14">
+                    <path d="M.0,.0L.0,35.9L306.6,35.9L306.6,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#ffcc53" stroke="#ffcc53"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#ffcc53" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="147.1" y="23.5">70</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="147.1" y="23.5">70</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(0.00,53.85)" id="group15">
+                <g id="shape16">
+                    <path d="M.0,.0L.0,35.9L131.4,35.9L131.4,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#ffcc53" stroke="#ffcc53"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#ffcc53" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="59.5" y="23.5">30</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="59.5" y="23.5">30</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(0.00,5.98)" id="group17">
+                <g id="shape18">
+                    <path d="M.0,.0L.0,35.9L219.0,35.9L219.0,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#ffcc53" stroke="#ffcc53"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#ffcc53" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="103.3" y="23.5">50</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="103.3" y="23.5">50</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
