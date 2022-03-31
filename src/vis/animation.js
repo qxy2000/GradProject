@@ -1,8 +1,11 @@
 import * as d3 from 'd3';
 import { transition } from 'd3';
-import horlinechart from '../svg/linechart5.svg'
-import verlinechart from '../svg/linechart6.svg'
+//import horlinechart from '../svg/linechart5.svg'
+import horlinechart from '../svg/horbarchart.svg'
+// import verlinechart from '../svg/linechart6.svg'
+import verlinechart from '../svg/verbarchart.svg'
 import piechart from '../svg/piechart2.svg'
+import bubblechart from '../svg/bubblechart.svg'
 
 class Animation {
     constructor() {
@@ -10,6 +13,7 @@ class Animation {
         this._container = document.createElement("div")
         this.chartlist = [];
         this.chartlist.push(horlinechart)
+        this.chartlist.push(bubblechart)
         this.chartlist.push(verlinechart)
         this.chartlist.push(piechart)
     }

@@ -1,0 +1,132 @@
+<svg height="320" width="286" viewBox="0 0 286 319.848" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs/>
+    <g transform="translate(6.31,1.00)" id="chart1">
+        <g transform="translate(0.00,292.85)" id="group2">
+            <g transform="translate(98.69,5.50)" id="shape3">
+                <path d="M15.0,7.0C15.0,10.9,11.9,14.0,8.0,14.0C4.1,14.0,1.0,10.9,1.0,7.0C1.0,3.1,4.1,.0,8.0,.0C11.9,.0,15.0,3.1,15.0,7.0z" stroke-width="1" fill-rule="nonzero" fill="#4155c6" stroke="#4155c6"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="26.0" y="12.5">Series 1</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="group4">
+            <g transform="translate(29.44,230.86)" id="shape5">
+                <path d="M.0,5.0L244.6,5.0M.0,5.0L.0,10.0M48.9,5.0L48.9,10.0M97.8,5.0L97.8,10.0M146.7,5.0L146.7,10.0M195.7,5.0L195.7,10.0" stroke-width="1" stroke="#000000" fill="none"/>
+                <rect transform="matrix(0.71,-0.71,0.71,0.71,-25.9,9.5)" height="15.0" width="63.5" x="-32.3" fill="#ffffff" y="28.5"/>
+                <text transform="matrix(0.71,-0.71,0.71,0.71,-25.9,9.5)" xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-32.3" y="41.5">Category 1</tspan>
+                </text>
+                <rect transform="matrix(0.71,-0.71,0.71,0.71,-11.6,44.0)" height="15.0" width="63.5" x="16.6" fill="#ffffff" y="28.5"/>
+                <text transform="matrix(0.71,-0.71,0.71,0.71,-11.6,44.0)" xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="16.6" y="41.5">Category 2</tspan>
+                </text>
+                <rect transform="matrix(0.71,-0.71,0.71,0.71,2.8,78.6)" height="15.0" width="63.5" x="65.5" fill="#ffffff" y="28.5"/>
+                <text transform="matrix(0.71,-0.71,0.71,0.71,2.8,78.6)" xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="65.5" y="41.5">Category 3</tspan>
+                </text>
+                <rect transform="matrix(0.71,-0.71,0.71,0.71,17.1,113.2)" height="15.0" width="63.5" x="114.4" fill="#ffffff" y="28.5"/>
+                <text transform="matrix(0.71,-0.71,0.71,0.71,17.1,113.2)" xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="114.4" y="41.5">Category 4</tspan>
+                </text>
+                <rect transform="matrix(0.71,-0.71,0.71,0.71,32.7,148.3)" height="15.0" width="59.9" x="166.4" fill="#ffffff" y="27.2"/>
+                <text transform="matrix(0.71,-0.71,0.71,0.71,32.7,148.3)" xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="166.4" y="40.2">Category5</tspan>
+                </text>
+                <path d="M48.9,-219.4L48.9,5.0M97.8,-219.4L97.8,5.0M146.7,-219.4L146.7,5.0M195.7,-219.4L195.7,5.0M244.6,-219.4L244.6,5.0" stroke-width="1" stroke="#dcdcdc" fill="none" id="shape6"/>
+            </g>
+            <g transform="translate(24.44,11.50)" id="shape7">
+                <path d="M5.0,224.4L5.0,.0M5.0,224.4L.0,224.4M5.0,192.3L.0,192.3M5.0,160.3L.0,160.3M5.0,128.2L.0,128.2M5.0,96.2L.0,96.2M5.0,64.1L.0,64.1M5.0,32.1L.0,32.1M5.0,.0L.0,.0M5.0,.0L.0,.0" stroke-width="1" stroke="#000000" fill="none"/>
+                <rect height="15.0" width="7.2" x="-16.2" fill="#ffffff" y="216.9"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-16.2" y="229.9">0</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="184.8"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="197.8">10</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="152.8"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="165.8">20</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="120.7"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="133.7">30</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="88.7"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="101.7">40</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="56.6"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="69.6">50</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="24.6"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="37.6">60</tspan>
+                </text>
+                <rect height="15.0" width="14.4" x="-23.4" fill="#ffffff" y="-7.5"/>
+                <text xml:space="preserve" style="fill:#000000;font-family:Arial;font-size:10.00pt">
+                    <tspan x="-23.4" y="5.5">70</tspan>
+                </text>
+                <path d="M5.0,192.3L249.6,192.3M5.0,160.3L249.6,160.3M5.0,128.2L249.6,128.2M5.0,96.2L249.6,96.2M5.0,64.1L249.6,64.1M5.0,32.1L249.6,32.1M5.0,.0L249.6,.0M5.0,.0L249.6,.0" stroke-width="1" stroke="#dcdcdc" fill="none" id="shape8"/>
+            </g>
+        </g>
+        <g transform="translate(29.44,11.50)" id="group9">
+            <g transform="translate(8.32,0.00)" id="group10">
+                <g transform="translate(0.00,48.08)" id="shape11">
+                    <path d="M.0,.0L.0,175.3L32.3,175.3L32.3,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#4155c6" stroke="#4155c6"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#4155c6" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="93.1">55</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="93.1">55</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(57.23,0.00)" id="group12">
+                <g transform="translate(0.00,112.18)" id="shape13">
+                    <path d="M.0,.0L.0,111.2L32.3,111.2L32.3,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#4155c6" stroke="#4155c6"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#4155c6" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="61.1">35</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="61.1">35</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(106.14,0.00)" id="group14">
+                <g transform="translate(0.00,144.23)" id="shape15">
+                    <path d="M.0,.0L.0,79.1L32.3,79.1L32.3,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#4155c6" stroke="#4155c6"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#4155c6" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="45.1">25</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="45.1">25</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(155.05,0.00)" id="group16">
+                <g transform="translate(0.00,176.29)" id="shape17">
+                    <path d="M.0,.0L.0,47.1L32.3,47.1L32.3,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#4155c6" stroke="#4155c6"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#4155c6" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="29.0">15</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="29.0">15</tspan>
+                    </text>
+                </g>
+            </g>
+            <g transform="translate(203.97,0.00)" id="group18">
+                <g transform="translate(0.00,153.85)" id="shape19">
+                    <path d="M.0,.0L.0,69.5L32.3,69.5L32.3,.0L.0,.0z" stroke-width="1" fill-rule="nonzero" fill="#4155c6" stroke="#4155c6"/>
+                    <text stroke-width="3" xml:space="preserve" stroke="#4155c6" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="40.3">22</tspan>
+                    </text>
+                    <text xml:space="preserve" style="fill:#ffffff;font-family:Arial;font-size:10.00pt">
+                        <tspan x="9.9" y="40.3">22</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

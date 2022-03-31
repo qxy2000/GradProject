@@ -1,13 +1,16 @@
 import {Fade} from './transitions';
 import { Wipe } from './transitions';
 import { Dissolve } from './transitions';
+import { Zoom } from './transitions';
 import {Animation} from '../vis'
+import TransType from './visualization/transtype';
 
 class AutoAnimation {
     constructor() {
         if (!AutoAnimation.instance) {
             this._container = document.createElement("div");
             this._timeouts = [];
+            this._transtypelist = [];
             this._animation = new Animation();
             AutoAnimation.instance = this;
         }
@@ -24,50 +27,55 @@ class AutoAnimation {
     }
 
     play() {
-        let animationDelay = 0;
+        let animationDelay = 5500;
         let pauseDuration = 3500;
         let transitionDuration = 3000;
-        // let fade = new Fade();
         this._container = ".demo-chart"
-        // fade.container(this.container());
-        // fade.duration(transitionDuration);
-        // let wipe = new Wipe();
-        // wipe.container(this.container());
-        // wipe.duration(transitionDuration);
-        let chartnum = 3
+        //debug
+        //给定图表之间的动画过渡类型
+        //之后需要改成函数
+        this._transtypelist.push('zoom')
+        this._transtypelist.push('fade');
+        this._transtypelist.push('wipe');
+        this._transtypelist.push('dissolve');
+
+        let chartnum = 4
+        //let chartnum = 2
         console.log("start autoanimation.play")
+
+        //debug
+        //animationDelay = this.zoomTransition(0, animationDelay, pauseDuration, transitionDuration);
+
         for (let i=0; i<chartnum; i++){
-            animationDelay =  this.fadeTransition(i, animationDelay, pauseDuration, transitionDuration);
+            //animationDelay =  this.fadeTransition(i, animationDelay, pauseDuration, transitionDuration);
             //animationDelay = this.wipeTransition(i, animationDelay, pauseDuration, transitionDuration);
             //animationDelay = this.dissolveTransition(i, animationDelay, pauseDuration, transitionDuration);
+            let type = this._transtypelist[i];
+            switch(type) {
+                case TransType.Fade:
+                    animationDelay = this.fadeTransition(i, animationDelay, pauseDuration, transitionDuration);
+                    break;
+                case TransType.Wipe:
+                    animationDelay = this.wipeTransition(i, animationDelay, pauseDuration, transitionDuration);
+                    break;
+                case TransType.Dissolve:
+                    animationDelay = this.dissolveTransition(i, animationDelay, pauseDuration, transitionDuration);
+                    break;
+                case TransType.Zoom:
+                    animationDelay = this.zoomTransition(0, animationDelay, pauseDuration, transitionDuration);
+                    break;
+                default:
+                    console.log("wrong transtype")
+                    return null;
+            }
 
-            // this._timeouts.push(setTimeout(function() {
-            //     this._animation.addchart(i)
-            // }.bind(this), animationDelay));
-            // animationDelay = animationDelay + 2000;
-
-            // //pause
-            // animationDelay = animationDelay + pauseDuration;
-
-            // console.log("animationDelay")
-            // console.log(animationDelay)
-
-            //transition
-            //fade
-            // this._timeouts.push(setTimeout(function () {
-            //     fade.animateTransition();
-            // }, animationDelay));
-            //wipe
-            // this._timeouts.push(setTimeout(function () {
-            //     wipe.animateTransition();
-            // }, animationDelay));
-            // animationDelay = animationDelay + transitionDuration;
-            // console.log("finish autoanimation.play")
         }
     }
 
     fadeTransition(chartIndex, animationDelay, pauseDuration, transitionDuration) {
         let fade = new Fade();
+        console.log("fade transitionDuration")
+        console.log(transitionDuration)
         fade.container(this.container());
         fade.duration(transitionDuration)
 
@@ -95,6 +103,8 @@ class AutoAnimation {
         let wipe = new Wipe();
         wipe.container(this.container());
         wipe.duration(transitionDuration)
+        console.log("wipe transitionDuration")
+        console.log(transitionDuration)
         //debug
         //chartIndex = chartIndex + 1
         let originContainer = this._container;
@@ -141,6 +151,9 @@ class AutoAnimation {
         let dissolve = new Dissolve();
         dissolve.container(this.container());
         dissolve.duration(transitionDuration)
+        console.log("dissolve transitionDuration")
+        console.log(transitionDuration)
+
         let originContainer = this._container;
         let newContainer; 
         if (originContainer == ".demo-chart") {
@@ -161,6 +174,52 @@ class AutoAnimation {
         this._timeouts.push(setTimeout(function(){
             dissolvehandle = "dissolveIn"
             dissolve.animateTransition(dissolvehandle, newContainer);
+        }, animationDelay));
+        animationDelay = animationDelay + transitionDuration;
+
+        //add chart duration
+        animationDelay = animationDelay + 2000;
+
+        //pause
+        animationDelay = animationDelay + pauseDuration;
+        console.log("animationDelay")
+
+        this._container = newContainer;
+
+        console.log(animationDelay)
+        console.log("finish fadetransition")
+
+        return animationDelay;
+    }
+
+    zoomTransition(chartIndex, animationDelay, pauseDuration, transitionDuration) {
+        let zoom = new Zoom();
+        //zoom需要2倍的transitionDuration，此处的操作不影响其他transition类型
+        transitionDuration = 2 * transitionDuration;
+        console.log("zoom transitionDuration")
+        console.log(transitionDuration)
+        zoom.container(this.container());
+        zoom.duration(transitionDuration)
+        let originContainer = this._container;
+        let newContainer; 
+        if (originContainer == ".demo-chart") {
+            newContainer = ".new-chart"
+        }
+        else {
+            newContainer = ".demo-chart"
+        }
+        this._timeouts.push(setTimeout(function() {
+            this._animation.addchart(chartIndex, newContainer)
+        }.bind(this), animationDelay));
+
+        let zoomhandle;
+        this._timeouts.push(setTimeout(function(){
+            zoomhandle = "zoomIn"
+            zoom.animateTransition(zoomhandle, originContainer);
+        }, animationDelay));
+        this._timeouts.push(setTimeout(function(){
+            zoomhandle = "add"
+            zoom.animateTransition(zoomhandle, newContainer);
         }, animationDelay));
         animationDelay = animationDelay + transitionDuration;
 

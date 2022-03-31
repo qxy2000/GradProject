@@ -9,3 +9,6 @@ export {
 export {
     default as Dissolve
 }from "./dissolve"
+export {
+    default as Zoom
+}from "./zoom"

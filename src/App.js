@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import horlinechart from './svg/linechart5.svg'
 import verlinechart from './svg/linechart6.svg'
 import piechart from './svg/piechart2.svg'
+import {ReactComponent as LineChart} from './svg/linechart.svg'
 import logo from './logo.svg'
 import Video  from './Video';
 
@@ -12,8 +13,9 @@ function App() {
     <div className="App">
      <div className="demo-chart">
        {/* <p>hello</p> */}
-       {/* <img></img> */}
-       <img src={horlinechart} />
+       <img></img>
+       {/* <img src={horlinechart} /> */}
+       <LineChart></LineChart>
        {/* <img src={verlinechart} />
        <img src={piechart} /> */}
        {/* <svg width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
