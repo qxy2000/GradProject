@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { AutoVideo } from './vis';
-import { fact2vis } from "./vis/recommendation/fact2vis";
+import { fact2vis } from "./vis/recommendation/fact2visCal";
 import { Animation } from "./vis"
 import * as d3 from 'd3';
 

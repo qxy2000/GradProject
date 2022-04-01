@@ -28,9 +28,14 @@ class Fact {
     load(spec){
         this._type = spec.type ? spec.type : FactType.DISTRIBUTION;
         //  去掉subtype字段，仅保留field字段和aggregate字段
+        this._measure = [];
         if (spec.measure.length !== 0) {
-            this._measure = [{"field": spec.measure[0].field, "aggregate": spec.measure[0].aggregate}]
-            let testmeasure = [{"field": spec.measure[0].field, "aggregate": spec.measure[0].aggregate}]
+            for(let i=0; i<spec.measure.length; i++){
+                let measure = {"field": spec.measure[i].field, "aggregate": spec.measure[i].aggregate}
+                this._measure.push(measure);
+            }
+            // this._measure = [{"field": spec.measure[0].field, "aggregate": spec.measure[0].aggregate}]
+            // let testmeasure = [{"field": spec.measure[0].field, "aggregate": spec.measure[0].aggregate}]
         }
         else {
             this._measure = [{ "aggregate": "count" }];

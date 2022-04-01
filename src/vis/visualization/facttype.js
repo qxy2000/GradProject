@@ -3,7 +3,8 @@ const FactType = {
     TREND: 'trend',
     CATEGORIZATION: 'categorization',
     DIFFERENCE: 'difference',
-    PROPORTION: 'proportion',
+    //目前的charttype不支持proportion
+    //PROPORTION: 'proportion',
     DISTRIBUTION: 'distribution',
     RANK: 'rank',
     ASSOCIATION: 'association',

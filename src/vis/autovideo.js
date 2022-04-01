@@ -1,7 +1,9 @@
 import Fact from './fact';
-import { fact2chart, fact2vis } from "./recommendation/fact2vis"
+import { fact2chart, fact2vis } from "./recommendation/fact2visCal"
+import { fact2action } from './recommendation/fact2vis';
 import _ from 'lodash';
 import { select } from 'd3';
+import { act } from 'react-dom/test-utils';
 //import Chart from '../Chart';
 
 
@@ -96,9 +98,12 @@ class AutoVideo {
         //将factlist中的fact取出来，单独操作
 
         let specVisList = [];
-        let actionspec = [];
         //生成action字段
-        for (let i=0; i<factlistspec.length; i++){
+        //debug
+        let factNum = factlistspec.length
+        //let factNum =1
+        for (let i=0; i<factNum; i++){
+            let actionspec = [];
             //生成fact字段
             let factspec = fact.load(factlistspec[i]);            
             //生成Data Preprocessing字段
@@ -114,18 +119,19 @@ class AutoVideo {
                 "filter": filterspec
             };
             actionspec.push(dataprespec);
+            console.log("dataprespec")
+            console.log(dataprespec)
 
             //生成Visualation字段
             //fact中的"type"用于生成chart类型
-            
-
-            //生成chart字段
-            //先将size设置为定值
-            let size = "small";
             let schema = fact._schema;
             let breakdown = factspec.breakdown;
+            let measure = factspec.measure;
             let type = factspec.type;
-            let chartspec = fact2chart(fact, schema, breakdown, type, size);
+            let visspec = fact2action(fact, schema, breakdown, measure, type);
+            for(let i=0; i<visspec.length; i++){
+                actionspec.push(visspec[i]);
+            }
 
             //生成Annotation字段
             //fact中的"focus"字段对应action中的"annotation"字段 ?
@@ -134,20 +140,20 @@ class AutoVideo {
             //annotation_method此处暂时写为静态值，之后需要改成函数
             let methodspec = "fill"
             let targetspec = factspec.focus
-            let annospec = {
-                "add": "annotation",
-                "method": methodspec,
-                "target": targetspec
+            //若focus字段有值，则添加对应的annotation
+            if(targetspec.length !== 0){
+                let annospec = {
+                    "add": "annotation",
+                    "method": methodspec,
+                    "target": targetspec
+                }
+                actionspec.push(annospec);
             }
-            actionspec.push(annospec);
-    
-
 
             let newspec = {
-                    "data": dataspec,
-                    "fact": factspec,
-                    "chart": chartspec
-                }
+                "data": dataspec,
+                "actions": actionspec
+            }
             let specVis = _.cloneDeep(newspec)
             console.log("specVis")
             console.log(specVis)
