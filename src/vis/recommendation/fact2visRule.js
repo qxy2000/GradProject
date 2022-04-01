@@ -19,12 +19,24 @@ export const fact2visRules = [
         "measureLen": 1,
         "breakdownType": [FieldType.CATEGORICAL]
     },
+    {
+        "fact": FactType.OUTLIER,
+        "chart": ChartType.LINE_CHART,
+        "measureLen": 1,
+        "breakdownType": [FieldType.TEMPORAL]
+    },
     //extreme
     {
         "fact": FactType.EXTREME,
         "chart": ChartType.VERTICAL_BAR_CHART,
         "measureLen": 1,
         "breakdownType": [FieldType.CATEGORICAL]
+    },
+    {
+        "fact": FactType.EXTREME,
+        "chart": ChartType.LINE_CHART,
+        "measureLen": 1,
+        "breakdownType": [FieldType.TEMPORAL]
     },
     //rank(最好改为HORIZENTAL_BAR_CHART)
     {
@@ -61,6 +73,12 @@ export const fact2visRules = [
         "measureLen": 1,
         "breakdownType": [FieldType.CATEGORICAL]
     },
+    {
+        "fact": FactType.TREND,
+        "chart": ChartType.LINE_CHART,
+        "measureLen": 1,
+        "breakdownType": [FieldType.TEMPORAL]
+    }
     //value
     //如何用VERTICAL_BAR_CHART表示value
     // {

@@ -4,6 +4,7 @@ import { getChoice } from "./fact2visCal";
 import { fact2visRules } from "./fact2visRule";
 import { getScatterplotSpec } from "../chart/scatterplot";
 import { getVerticalBarChartSpec } from "../chart/verticalbarchart";
+import { getLineChartspec } from "../chart/linechart";
 
 //getFactChartType：为fact匹配合适的chart类型
 //fact：单个数据事实
@@ -81,6 +82,18 @@ export const fact2action = function(fact, schema, breakdown, measure, type){
             }
             visActions.push(markspec);
             encodingspec = getVerticalBarChartSpec(schema, breakdown, measure)
+            for(let i=0; i<encodingspec.length; i++){
+                visActions.push(encodingspec[i]);
+            }
+            break;
+        case ChartType.LINE_CHART:
+            chartMark = "line";
+            markspec = {
+                "add": "chart",
+                "mark": chartMark
+            }
+            visActions.push(markspec);
+            encodingspec = getLineChartspec(schema, breakdown, measure)
             for(let i=0; i<encodingspec.length; i++){
                 visActions.push(encodingspec[i]);
             }

@@ -56,6 +56,26 @@
             "information": 3.0,
             "significance": 0.86
         },
+        {
+            "type": "trend",
+            "measure": [
+                {
+                    "field": "Sales",
+                    "subtype": "integer+",
+                    "aggregate": "avg"
+                }
+            ],
+            "subspace": [],
+            "groupby": [
+                "Year"
+            ],
+            "focus": [],
+            "score": 2.59,
+            "parameter": [],
+            "possibility": 0.125,
+            "information": 3.0,
+            "significance": 0.86
+        },
           {
               "type": "rank",
               "measure": [
