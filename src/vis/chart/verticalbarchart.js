@@ -39,7 +39,22 @@ export const getVerticalBarChartSpec = function(schema, breakdown, measure){
                 }
             }
             encodingspec.push(encodingY)
-            //encodingColor不确定是什么值
+
+            //用breakdown中的第二个元素作为colorEncoding（categorical类型）
+            if (breakdownNum > 1){
+                let breakdownSndSchema = schema.filter(s => s.field === breakdown[1].field)
+                if(breakdownSndSchema[0].type === FieldType.CATEGORICAL){
+                    let encodingColor = {
+                        "add": "encoding",
+                        "channel": "color",
+                        "field": {
+                            "field": breakdown[1].field,
+                            "type": breakdownSndSchema[0].type
+                        }
+                    }
+                    encodingspec.push(encodingColor)
+                }
+            }
 
             console.log("VerticalBarChart encodingspec");
             console.log(encodingspec);

@@ -43,7 +43,11 @@ class Fact {
         this._subspace = spec.subspace? spec.subspace : [];
         //  输入的数据故事中fact的groupby字段对应此处的breakdown字段
         if (spec.groupby.length !== 0) {
-            this._breakdown = [{"field": spec.groupby[0]}]
+            this._breakdown = []
+            for (let j=0; j<spec.groupby.length; j++){
+                this._breakdown.push({"field": spec.groupby[j]})
+            }
+            //this._breakdown = [{"field": spec.groupby[0]}]
         }
         this._focus = spec.focus ? spec.focus : [];
         let fact = {
