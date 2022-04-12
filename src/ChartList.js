@@ -29,12 +29,17 @@ export default class ChartList extends Component {
         let vis;
         let spec = this.props.spec;
         let container = "demo-chart";
+        let transList = [];
         this.autovideo = new AutoVideo();
         // this.autovideo.container(container);
         this.autovideo.load(spec);
-        this.specVis = this.autovideo.generate();
+        let result = this.autovideo.generate();
+        this.specVis = result.specVisList;
+        transList = result.transtypelist;
         console.log("specVis render")
         console.log(this.specVis)
+        console.log("transList render")
+        console.log(transList)
         //vis = fact2vis(this.specVis[0]);
         console.log("calliope-chart singleFinalSpecVis")
         console.log(this.specVis[0])

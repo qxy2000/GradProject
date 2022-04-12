@@ -1,6 +1,8 @@
 import Fact from './fact';
 import { fact2chart, fact2vis } from "./recommendation/fact2visCal"
 import { fact2action } from './recommendation/fact2vis';
+import { fact2trans } from './recommendation/fact2trans';
+import TupleType from './visualization/tupletype';
 import _ from 'lodash';
 import { select } from 'd3';
 import { act } from 'react-dom/test-utils';
@@ -30,6 +32,80 @@ class AutoVideo {
 
     load(spec) {
         this._spec = spec;
+    }
+
+    //判断字段是否相等
+    isEqual(tuple1, tuple2, type){
+        if(tuple1.length === tuple2.length){
+            switch(type){
+                case TupleType.SUBSPACE:
+                    for(let i=0; i<tuple1.length; i++){
+                        if(tuple1[i].field === tuple2[i].field){
+                            if(tuple1[i].value !== tuple2[i].value){return false;}
+                        }
+                        else{
+                            return false;
+                        }
+                    }
+                    return true;
+                    break;
+                case TupleType.MEASURE:
+                    for(let i=0; i<tuple1.length; i++){
+                        if(tuple1[i].field !== tuple2[i].field){
+                            return false;
+                        }
+                    }
+                    return true;
+                    break;
+                case TupleType.BREAKDOWN:
+                    for(let i=0; i<tuple1.length; i++){
+                        if(tuple1[i].field !== tuple2[i].field){
+                            return false;
+                        }
+                    }
+                    return true;
+                    break;
+                case TupleType.FOCUS:
+                    for(let i=0; i<tuple1.length; i++){
+                        if(tuple1[i].field === tuple2[i].field){
+                            if(tuple1[i].value !== tuple2[i].value){return false;}
+                        }
+                        else{
+                            return false;
+                        }
+                    }
+                    return true;
+                    break;
+                default:
+                    console.log("wrong tupleType")
+                    return null;
+            }         
+        }
+        else{
+            return false
+        }
+    }
+
+    //判断两个fact生成的图表是否重复
+    isDuplicated(factspec1, factspec2, charttype1, charttype2){
+        let subspaceDuplicationMark = this.isEqual(factspec1.subspace, factspec2.subspace, TupleType.SUBSPACE);
+        let measureDuplicationMark = this.isEqual(factspec1.measure, factspec2.measure, TupleType.MEASURE);
+        let breakdownDuplicationMark = this.isEqual(factspec1.breakdown, factspec2.breakdown, TupleType.BREAKDOWN);
+        let focusDuplicationMark = this.isEqual(factspec1.focus, factspec2.focus, TupleType.FOCUS);
+        let charttypeDuplicationMark;
+        if(charttype1 === charttype2){
+            charttypeDuplicationMark = true;
+        }
+        else{
+            charttypeDuplicationMark = false;
+        }
+        //前后两个图表完全相同
+        if(subspaceDuplicationMark && measureDuplicationMark && breakdownDuplicationMark && focusDuplicationMark && charttypeDuplicationMark){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     //use calliope-chart to test
@@ -98,6 +174,8 @@ class AutoVideo {
         //将factlist中的fact取出来，单独操作
 
         let specVisList = [];
+        let transtypelist = [];
+        let preChartType;
         //生成action字段
         //debug
         let factNum = factlistspec.length
@@ -105,7 +183,7 @@ class AutoVideo {
         for (let i=0; i<factNum; i++){
             let actionspec = [];
             //生成fact字段
-            let factspec = fact.load(factlistspec[i]);            
+            let factspec = fact.load(factlistspec[i]); 
             //生成Data Preprocessing字段
             //fact中的"measure"字段对应action中的"select"字段
             let selectspec = factspec.measure;
@@ -113,6 +191,7 @@ class AutoVideo {
             let groupbyspec = factspec.breakdown;
             //fact中的"subspace"字段对应action中的"filter"字段
             let filterspec = factspec.subspace;
+
             let dataprespec = {
                 "select": selectspec,
                 "groupby": groupbyspec,
@@ -129,6 +208,31 @@ class AutoVideo {
             let measure = factspec.measure;
             let type = factspec.type;
             let visspec = fact2action(fact, schema, breakdown, measure, type);
+
+            //判断是否为重复的图表，若不是，则选择过渡动画类型；若是，则舍去此fact，避免重复
+            //从第一个fact之后开始选择，第一个fact之前不需要过渡动画
+            if (i > 0) {
+                let chartType = visspec[0].mark
+                let prefactspec = fact.load(factlistspec[i-1]); 
+                let duplicationMark = this.isDuplicated(prefactspec, factspec, preChartType, chartType)
+                //当前后两个图表完全相同时，舍弃后一个图表，避免重复
+                if(duplicationMark){
+                    //跳过之后的语句，直接执行下一个循环
+                    continue;
+                }
+
+                //若两个图表没有重复，则进行两个fact之间过渡动画的选择
+                let transtype = fact2trans(prefactspec, factspec);
+                console.log("autoVideo transtype")
+                console.log(transtype)
+                //let transtype = _.cloneDeep(trans)
+                transtypelist.push(transtype)
+            }
+            //更新preChartType
+            preChartType = visspec[0].mark
+            console.log("preChartType")
+            console.log(preChartType)
+
             for(let i=0; i<visspec.length; i++){
                 actionspec.push(visspec[i]);
             }
@@ -162,7 +266,14 @@ class AutoVideo {
         console.log("specVisList")
         console.log(specVisList)
 
-        return specVisList;
+        console.log("transtypelist")
+        console.log(transtypelist)
+        let result = {
+            "specVisList": specVisList,
+            "transtypelist": transtypelist
+        }
+
+        return result;
     }
 
 }
